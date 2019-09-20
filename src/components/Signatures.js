@@ -29,18 +29,30 @@ const Signatures = props => {
       base64url(Web3.utils.hexToBytes(signatureObject.signature))
 
     let hint
+    let cursor = "pointer"
 
-    if(props.hint){
+    if(props.static){
+      cursor = "auto"
       hint = (
         <div style={{marginTop:"4vw"}}>
-          ✔️ This message was signed by {signatureObject.recover}.
+          <div>
+            ✅ This message was signed by {signatureObject.recover}
+          </div>
+          <div>
+            📜 Message: "{signatureObject.message}"
+          </div>
+          <div>
+            🔏 Signature: <div style={{fontSize:11}}>{signatureObject.signature}</div>
+          </div>
         </div>
       )
     }
 
     return (
-      <div style={{ margin: 8, padding: 8, paddingBottom:16, border: "1px solid #666666", backgroundColor:"rgba(32, 32, 32, 0.8)", cursor:"pointer", marginTop: "4vw"}} onClick={() => {
-        window.open(link);
+      <div style={{ margin: 8, padding: 8, paddingBottom:16, border: "1px solid #666666", backgroundColor:"rgba(32, 32, 32, 0.8)", cursor:cursor, marginTop: "4vw"}} onClick={() => {
+        if(!props.static){
+          window.open(link);
+        }
       }}>
 
         <Row

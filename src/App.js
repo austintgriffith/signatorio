@@ -35,7 +35,7 @@ function App() {
     return (
       <div style={{ textAlign: "center", color: "#DDDDDD", marginTop: "40vw" }}>
         <Signatures
-          hint={true}
+          static={true}
           signatures={[
             {
               message: params.m,
