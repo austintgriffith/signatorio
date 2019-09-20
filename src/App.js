@@ -52,7 +52,7 @@ function App() {
         <KirbyEthereumProvider config={config}>
           <Signatorio />
         </KirbyEthereumProvider>
-        <GithubCorner url={'https://github.com/austintgriffith/signatorio'} svgStyle={{"stroke": "#777777","left": "0","transform": "scale(-1, 1)","fill":"#000000","color":"#666666"}}/>
+        <GithubCorner target="_blank" url={'https://github.com/austintgriffith/signatorio'} svgStyle={{"stroke": "#777777","left": "0","transform": "scale(-1, 1)","fill":"#000000","color":"#666666"}}/>
       </div>
     );
   }

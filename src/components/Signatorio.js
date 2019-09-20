@@ -183,7 +183,7 @@ const Signatorio = () => {
       <div style={{width:"80%", margin:10, marginLeft:"10%", marginTop:"4vw", padding:16, border:"1px solid #777777", backgroundColor:"rgba(32, 32, 32, 0.8)"}}>
 
         <div style={{padding:16}}>
-          Using an Ethereum key pair, you can create a <a href="https://en.wikipedia.org/wiki/Digital_signature" target="_blank">digital signature</a> that is tamperproof and proves that a specific account signed a specific message.
+          Using an Ethereum key pair, you can create a <a href="https://en.wikipedia.org/wiki/Digital_signature" target="_blank">digital signature</a> that is tamperproof and cryptographically proves that a specific account signed a specific message.
         </div>
 
         <div style={{padding:16}}>
