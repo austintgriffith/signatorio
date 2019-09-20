@@ -8,6 +8,10 @@ import {
 import queryString from "query-string";
 import Signatorio from "./components/Signatorio.js";
 import Signatures from "./components/Signatures.js";
+import { Button } from "react-bootstrap";
+import GithubCorner from 'react-github-corners'
+import 'react-github-corners/dist/GithubCorner.css'
+
 const Web3 = require("web3");
 let base64url = require("base64url");
 let web3 = new Web3()
@@ -26,26 +30,10 @@ function App() {
     }
   };
 
-  const title = (
-    <div
-        style={{
-          textAlign: "center",
-          color: "#555555",
-          marginTop: "14vw",
-          fontSize: "16vw",
-          fontWeight:"bold",
-          fontFamily: "'League Script', cursive"
-        }}
-      >
-        Signatorio
-      </div>
-  )
-
   if (params && params.m && params.s) {
     let signature = Web3.utils.bytesToHex(base64url.toBuffer(params.s))
     return (
-      <div style={{ textAlign: "center", color: "#DDDDDD" }}>
-        {title}
+      <div style={{ textAlign: "center", color: "#DDDDDD", marginTop: "40vw" }}>
         <Signatures
           hint={true}
           signatures={[
@@ -61,10 +49,10 @@ function App() {
   } else {
     return (
       <div style={{ textAlign: "center", color: "#DDDDDD" }}>
-        {title}
         <KirbyEthereumProvider config={config}>
           <Signatorio />
         </KirbyEthereumProvider>
+        <GithubCorner url={'https://github.com/austintgriffith/signatorio'} svgStyle={{"stroke": "#777777","left": "0","transform": "scale(-1, 1)","fill":"#000000","color":"#666666"}}/>
       </div>
     );
   }

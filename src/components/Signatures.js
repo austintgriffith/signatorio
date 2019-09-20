@@ -21,7 +21,7 @@ const Signatures = props => {
     const blockSize = 104
 
     let link =
-      window.location.protocol + "//" + 
+      window.location.protocol + "//" +
       window.location.host +
       "/?m=" +
       encodeURI(signatureObject.message) +
@@ -39,15 +39,15 @@ const Signatures = props => {
     }
 
     return (
-      <div style={{ margin: 8, padding: 8, border: "1px solid #666666", cursor:"pointer", marginTop: "4vw"}} onClick={() => {
+      <div style={{ margin: 8, padding: 8, paddingBottom:16, border: "1px solid #666666", backgroundColor:"rgba(32, 32, 32, 0.8)", cursor:"pointer", marginTop: "4vw"}} onClick={() => {
         window.open(link);
       }}>
-       
+
         <Row
-          
+
         >
           <Col xs={12} style={{ fontWeight: "bolder", fontSize: 14 }}>
-          🔏 {signatureObject.message} 
+          🔏 {signatureObject.message}
           </Col>
         </Row>
         <Row style={{ marginTop: 8 }}>
