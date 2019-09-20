@@ -8,16 +8,15 @@ import {
 import { Button, Form } from "react-bootstrap";
 import Blockies from "react-blockies";
 import Loader from 'react-loader-spinner'
-
-
 import Signatures from "./Signatures.js";
-
+const queryString = require('query-string');
+const parsed = queryString.parse(window.location.search);
 
 const Signatorio = () => {
   const kirby = React.useContext(KirbyEthereumContext);
 
   const [bg, setBg] = React.useState(0.01);
-  const [message, setMessage] = React.useState("");
+  const [message, setMessage] = React.useState(parsed.message);
   const [signatures, setSignatures] = React.useState([]);
   const [showAbout, setShowAbout] = React.useState(false);
 
@@ -40,6 +39,18 @@ const Signatorio = () => {
         });
     }
   }, [kirby, readonly]);
+
+  React.useEffect(() => {
+    let newUrl = "/"
+    if(message){
+      newUrl = "/?message="+message
+    }
+    if (window.history.pushState) {
+      window.history.pushState(false, "Signator.io", newUrl);
+    } else {
+      document.location.href = newUrl;
+    }
+  }, [message]);
 
   async function requestSign() {
     const web3 = kirby.web3;
