@@ -16,7 +16,7 @@ const Signatorio = () => {
   const kirby = React.useContext(KirbyEthereumContext);
 
   const [bg, setBg] = React.useState(0.01);
-  const [message, setMessage] = React.useState(parsed.message);
+  const [message, setMessage] = React.useState(parsed.message?parsed.message:"");
   const [signatures, setSignatures] = React.useState([]);
   const [showAbout, setShowAbout] = React.useState(false);
 
@@ -137,7 +137,7 @@ const Signatorio = () => {
         <Form.Group controlId="signForm">
           <small id="formHead" className="form-text text-muted" style={{marginBottom:"2vw", fontWeight:'bold', fontSize:16}}>
             <span style={{color:"#FFFFFF"}}>
-              Create, verify, and share Ethereum signed messages.
+              Create, verify, and share signed messages.
             </span>
           </small>
           <div className="input-group mb-3">

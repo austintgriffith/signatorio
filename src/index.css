@@ -7,7 +7,7 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background: url(background.jpg) no-repeat top center fixed; 
+  background: url(background.jpg) no-repeat top center fixed;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
@@ -29,7 +29,7 @@ input, textarea{
 }
 
 .message-input {
-  width: 88%;
+  width: 85%;
   padding: 8px;
   color:#fff;
   background-color: #444;
