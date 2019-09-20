@@ -1,6 +1,8 @@
 Create, verify, and share Ethereum signed messages.
 
-Using an Ethereum key pair, you can create a digital signature that is tamperproof and proves that a specific account signed a specific message.
+[https://signator.io](https://signator.io)
+
+Using an Ethereum key pair, you can create a digital signature that is tamperproof and cryptographically proves that a specific account signed a specific message.
 
 This is a rough example of an app using the web3 library [Kirby](https://github.com/joincivil/kirby-web3). It is in the alpha test phase but having a product in the wild helps us calibrate our build and get feedback.
 
